@@ -1,0 +1,58 @@
+body {
+  background-color: #f5f7fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+form input, form button {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  margin: 12px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #4b7bec;
+  box-shadow: 0 0 5px rgba(75, 123, 236, 0.5);
+}
+
+form button {
+  background-color: #4b7bec;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #3867d6;
+}
+
+.result-card {
+  background-color: #eef2f7;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 10px;
+  border-left: 6px solid #4b7bec;
+  transition: all 0.3s ease-in-out;
+}
+
+.result-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
