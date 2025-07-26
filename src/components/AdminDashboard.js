@@ -5,7 +5,7 @@ function AdminDashboard() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/students/all`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/students`)
       .then(res => res.json())
       .then(data => setStudents(data))
       .catch(err => console.error("❌ Fetch error:", err));
