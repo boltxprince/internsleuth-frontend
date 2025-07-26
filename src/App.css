@@ -1,142 +1,101 @@
-/* 🌈 Background Gradient */
-.App {
-  min-height: 100vh;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
+/* src/App.css */
+body {
   font-family: 'Segoe UI', sans-serif;
-  color: white;
+  background-color: #f4f7fa;
+  margin: 0;
+  padding: 0;
 }
 
-/* 🌞 Dark Mode */
-.App.dark {
-  background: linear-gradient(135deg, #141e30, #243b55);
-}
-
-/* 🧊 Header */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
-}
-
-.header h2 {
-  font-size: 2rem;
-}
-
-.theme-toggle {
-  font-size: 1.5rem;
-  background: transparent;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-/* 🧊 Glassmorphism Form */
-form {
-  max-width: 600px;
-  margin: 0 auto 40px auto;
+.App {
   padding: 30px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-}
-
-form input,
-form select {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 18px;
-  border: none;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
-  font-size: 1rem;
-  outline: none;
-}
-
-form input::placeholder {
-  color: #e0e0e0;
-}
-
-.category-select label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 600;
-}
-
-form button {
-  width: 100%;
-  padding: 12px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  background-color: #ffffff;
-  color: #6e8efb;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-form button:hover {
-  background-color: #f0f0f0;
-}
-
-/* 📊 Results Section */
-.results {
   max-width: 800px;
-  margin: 0 auto;
-  margin-top: 30px;
+  margin: auto;
 }
 
-.results h3 {
-  font-size: 1.5rem;
+.main-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
   margin-bottom: 20px;
 }
 
-.result-card {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
+.form-container {
+  display: grid;
+  gap: 10px;
+  background: #fff;
   padding: 20px;
-  margin-bottom: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(6px);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.result-card h4 {
-  margin: 0 0 10px 0;
-  font-size: 1.2rem;
-  color: #fff;
+input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border 0.3s ease;
 }
 
-.result-card p {
-  margin: 4px 0;
-  color: #ddd;
+input:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
-/* ❗ No Results */
-.no-match {
-  text-align: center;
-  color: #ffe;
-  font-size: 1.1rem;
+.submit-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-/* ⏳ Spinner */
-.spinner {
-  margin: 20px auto;
-  border: 5px solid rgba(255, 255, 255, 0.2);
-  border-top: 5px solid #fff;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
+.submit-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+.submit-btn:hover:not(:disabled) {
+  background-color: #0056b3;
 }
+
+.results {
+  margin-top: 30px;
+}
+
+.result-title {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.no-results,
+.loading-text {
+  font-style: italic;
+  color: #777;
+}
+
+.result-card {
+  background: #e9f7fe;
+  border-left: 4px solid #007bff;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+
+.apply-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.apply-btn:hover {
+  background-color: #0056b3;
+}
+
