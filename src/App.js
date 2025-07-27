@@ -1,7 +1,4 @@
-// src/App.js
-
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import AdminDashboard from './components/AdminDashboard';
 
@@ -108,7 +105,7 @@ function StudentFormPage() {
         <input type="number" step="0.01" name="gpa" placeholder="GPA (e.g., 8.2)" onChange={handleChange} required />
         <input type="text" name="city" placeholder="Preferred City" onChange={handleChange} required />
         <button type="submit" className="submit-btn" disabled={loading}>
-          {loading ? '🔄 Searching...Please Wait' : 'Find Internships'}
+          {loading ? '🔄 Searching...Please wait' : 'Find Internships'}
         </button>
       </form>
 
@@ -138,13 +135,36 @@ function StudentFormPage() {
 }
 
 function App() {
+  const [view, setView] = useState('landing'); // 'landing', 'student', 'admin'
+
+  if (view === 'student') return <StudentFormPage />;
+  if (view === 'admin') return <AdminDashboard />;
+
+  // Landing page content
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<StudentFormPage />} />
-        <Route path="/admin" element={<AdminDashboard />} />
-      </Routes>
-    </Router>
+    <div className="App" style={{ textAlign: 'center', minHeight: '80vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+      <h1 className="main-title" style={{ fontSize: '2.8rem', marginBottom: '18px' }}>
+        🚀 InternSleuth
+      </h1>
+      <p style={{ fontSize: '1.25rem', color: '#0d8b8b', marginBottom: '32px', fontWeight: 500 }}>
+        Discover, Apply, and Track the Best Internships Tailored for You!
+      </p>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', marginBottom: '30px' }}>
+        <button className="submit-btn" style={{ width: 180 }} onClick={() => setView('student')}>
+          Student Portal
+        </button>
+        <button
+          className="submit-btn"
+          style={{ width: 180, background: 'linear-gradient(90deg, #007bff 60%, #0d8b8b 100%)' }}
+          onClick={() => setView('admin')}
+        >
+          Admin Panel
+        </button>
+      </div>
+      <div style={{ color: '#888', fontSize: '1rem', marginTop: '18px' }}>
+        <span>Made with 💙 for your career journey</span>
+      </div>
+    </div>
   );
 }
 
