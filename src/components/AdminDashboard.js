@@ -25,6 +25,7 @@ function AdminDashboard() {
               <th>Branch</th>
               <th>Year</th>
               <th>Skills</th>
+               <th>EMAIL</th>
               <th>GPA</th>
               <th>City</th>
             </tr>
@@ -37,6 +38,7 @@ function AdminDashboard() {
                 <td>{stu.branch}</td>
                 <td>{stu.year}</td>
                 <td>{stu.skills}</td>
+                <td>{stu.email}</td>
                 <td>{stu.gpa}</td>
                 <td>{stu.city}</td>
               </tr>
